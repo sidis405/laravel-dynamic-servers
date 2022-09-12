@@ -22,7 +22,7 @@ class RebootServerJob extends DynamicServerJob
 
         event(new RebootingServerEvent($this->server));
 
-        /** @var class-string<VerifyServerRebootedJob> $verifyServerDeletedJob */
+        /** @var class-string<VerifyServerRebootedJob> $verifyServerRebootedJob */
         $verifyServerRebootedJob = Config::dynamicServerJobClass('verify_server_rebooted');
 
         dispatch(new $verifyServerRebootedJob($this->server));

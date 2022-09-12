@@ -3,8 +3,6 @@
 namespace Spatie\DynamicServers\Jobs;
 
 use Exception;
-use Spatie\DynamicServers\Enums\ServerStatus;
-use Spatie\DynamicServers\Events\ServerRunningEvent;
 
 class UpdateServerMetaJob extends DynamicServerJob
 {

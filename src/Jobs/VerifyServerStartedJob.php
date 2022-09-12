@@ -25,7 +25,7 @@ class VerifyServerStartedJob extends DynamicServerJob
 
                 event(new ServerRunningEvent($this->server, $previousStatus));
 
-                /** @var class-string<UpdateServermetaJob> $updateServerMetaJob */
+                /** @var class-string<UpdateServerMetaJob> $updateServerMetaJob */
                 $updateServerMetaJob = Config::dynamicServerJobClass('update_server_meta');
 
                 dispatch(new $updateServerMetaJob($this->server));
