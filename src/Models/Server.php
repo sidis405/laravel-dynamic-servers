@@ -113,6 +113,16 @@ class Server extends Model
         return $this;
     }
 
+    public function updateMeta(): self
+    {
+        /** @var UpdateServerMetaAction $action */
+        $action = Config::action('update_server_meta');
+
+        $action->execute($this);
+
+        return $this;
+    }
+
     public function markAs(ServerStatus $status): self
     {
         $this->update([

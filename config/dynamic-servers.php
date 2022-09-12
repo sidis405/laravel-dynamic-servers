@@ -24,6 +24,7 @@ return [
         'stop_server' => Spatie\DynamicServers\Actions\StopServerAction::class,
         'find_servers_to_stop' => Spatie\DynamicServers\Actions\FindServersToStopAction::class,
         'reboot_server' => Spatie\DynamicServers\Actions\RebootServerAction::class,
+        'update_server_meta' => Spatie\DynamicServers\Actions\UpdateServerMetaAction::class,
     ],
 
     /*
@@ -40,6 +41,7 @@ return [
         'verify_server_deleted' => Spatie\DynamicServers\Jobs\VerifyServerDeletedJob::class,
         'reboot_server' => Spatie\DynamicServers\Jobs\RebootServerJob::class,
         'verify_server_rebooted' => Spatie\DynamicServers\Jobs\VerifyServerRebootedJob::class,
+        'update_server_meta' => Spatie\DynamicServers\Jobs\UpdateServerMetaJob::class,
     ],
 
     /*

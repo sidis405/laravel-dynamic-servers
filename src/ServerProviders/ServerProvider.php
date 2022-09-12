@@ -15,6 +15,8 @@ abstract class ServerProvider
         return $this;
     }
 
+    abstract public function updateServerMeta(): void;
+
     abstract public function createServer(): void;
 
     abstract public function hasStarted(): bool;

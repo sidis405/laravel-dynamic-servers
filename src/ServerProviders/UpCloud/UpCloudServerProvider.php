@@ -24,6 +24,13 @@ class UpCloudServerProvider extends ServerProvider
         $this->server->addMeta('server_properties', $upCloudServer->toArray());
     }
 
+    public function updateServerMeta(): void
+    {
+        $upCloudServer = $this->getServer();
+
+        $this->server->addMeta('server_properties', $upCloudServer->toArray());
+    }
+
     public function hasStarted(): bool
     {
         $upCloudServer = $this->getServer();

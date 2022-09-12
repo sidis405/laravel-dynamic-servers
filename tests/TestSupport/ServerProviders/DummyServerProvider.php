@@ -11,6 +11,11 @@ class DummyServerProvider extends ServerProvider
         //
     }
 
+    public function updateServerMeta(): void
+    {
+        //
+    }
+
     public function hasStarted(): bool
     {
         return true;

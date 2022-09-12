@@ -5,6 +5,7 @@ namespace Spatie\DynamicServers\Jobs;
 use Exception;
 use Spatie\DynamicServers\Enums\ServerStatus;
 use Spatie\DynamicServers\Events\ServerRunningEvent;
+use Spatie\DynamicServers\Support\Config;
 
 class VerifyServerStartedJob extends DynamicServerJob
 {
@@ -24,11 +25,17 @@ class VerifyServerStartedJob extends DynamicServerJob
 
                 event(new ServerRunningEvent($this->server, $previousStatus));
 
+                /** @var class-string<UpdateServermetaJob> $updateServerMetaJob */
+                $updateServerMetaJob = Config::dynamicServerJobClass('update_server_meta');
+
+                dispatch(new $updateServerMetaJob($this->server));
+
                 if ($this->server->rebootRequested()) {
                     $this->server->reboot();
 
                     return;
                 }
+
 
                 return;
             }
